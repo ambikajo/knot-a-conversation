@@ -1,0 +1,51 @@
+#headline {
+  font-family: 'Rajdhani', sans-serif;
+  /* text-align: center; */
+  margin: 50px;
+color: #444444;
+  /* font-color: #cdcdcd; */
+  /* z-index: 10000000000; */
+  font-size: 350 px;
+  width:200px;
+}
+/*
+a-scene {
+  z-index: -1
+} */
+.header{
+  z-index: 1000
+}
+
+#exitButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  background-image: url(/qr-knot.png);
+  /* z-index: 10000000000; */
+  background-size: 100%;
+  -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.15);
+  border: 5px solid #efefef
+}
+
+#qr-inst {
+  font-family: 'Rajdhani', sans-serif;
+  text-align: center;
+  font-size:14px;
+  position: fixed;
+  top: 140px;
+  right: 25px;
+  width: 100px;
+}
+
+#info{
+  font-family: 'Rajdhani', sans-serif;
+  /* text-align: center; */
+  font-size:14px;
+  margin-left: 50px;
+  margin-top: -40px;
+  width:300px;
+}

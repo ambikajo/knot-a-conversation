@@ -1,0 +1,23 @@
+{
+  "name": "knot a sculpture on AFRAME",
+  "description": "An online version of the knot a conversation sculpture",
+  "version": "0.3.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "budo --live --verbose --port 3000 --open",
+    "deploy": "ghpages",
+    "ghpages": "ghpages"
+  },
+  "devDependencies": {
+    "budo": "^7.0.0",
+    "ghpages": "0.0.3"
+  },
+  "keywords": [
+    "interactive art",
+    "aframe art",
+    "aframe-boilerplate",
+    "aframe-scene",
+    "webvr",
+    "vr"
+  ]
+}
