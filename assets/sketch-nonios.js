@@ -69,7 +69,7 @@ function setup() {
 }
 //check orientation rather than platform
 function startStream() {
-  if (navigator.platform != "iPhone") {
+  if (navigator.platform != "iPhone" || navigator.platform != "Linux armv8l") {
     vid = createCapture(VIDEO)
   } else {
 
