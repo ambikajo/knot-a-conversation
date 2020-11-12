@@ -69,11 +69,17 @@ function setup() {
 }
 //check orientation rather than platform
 function startStream() {
-  if (navigator.platform != "iPhone" || navigator.platform != "Linux armv8l") {
-    vid = createCapture(VIDEO)
+
+  //   "portrait",
+  // "portrait-primary"
+  // if (window.screen.orientation.type !=
+  //   "landscape-primary" || window.screen.orientation.type !=
+  //   "landscape") {
+    if (navigator.platform == "iPhone" || navigator.platform == "Linux armv8l") {
+    vid = createCapture(VIDEO , constraints)
   } else {
 
-    vid = createCapture(VIDEO, constraints);
+    vid = createCapture(VIDEO);
   }
   // vid = createCapture(VIDEO)
   // vid.hide()
@@ -144,18 +150,18 @@ function addFrm() {
   }
   // console.log(conf)
   // console.log()
-  if(label == "Knot 4" && conf > 0.97){
+  if (label == "Knot 4" && conf > 0.97) {
     confArr.push(frameCount)
-    if(confArr.length > 240){
+    if (confArr.length > 240) {
       diff = confArr[239] - confArr[0]
-      if(diff > 300){
+      if (diff > 300) {
 
         console.log(diff, confArr[0], confArr[49], "other")
       } else {
         answerbtn.mousePressed(giveanswer)
         console.log(diff, confArr[0], confArr[49], k4)
         // answerbtn.show()
-          machAns2 = dict.knotalist[3].answer[0]
+        machAns2 = dict.knotalist[3].answer[0]
 
       }
       confArr = []
@@ -163,9 +169,9 @@ function addFrm() {
   }
 }
 
-function giveanswer(){
+function giveanswer() {
 
 
-    machAns.html(machAns2)
+  machAns.html(machAns2)
 
 }
