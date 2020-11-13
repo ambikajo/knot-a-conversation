@@ -1,7 +1,7 @@
 # K(not) a Conversation 
-A Neural Knotwork Prototype
+**A Neural Knotwork Prototype**
 
-* A collaboration between Ambika Joshi, Nayeli Vega Vargas, and Thomas Heidtmann
+_A collaboration between Ambika Joshi, Nayeli Vega Vargas, and Thomas Heidtmann_
 
 This project was created during the befantastic CoLab Fellowship.
 
