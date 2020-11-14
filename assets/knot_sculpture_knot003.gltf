@@ -1,0 +1,122 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.5.1",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Knot.003",
+            "rotation" : [
+                -0.1124059334397316,
+                -0.4664335548877716,
+                0.31126970052719116,
+                0.8203144669532776
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Green",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.32372403144836426,
+                    0.8000000715255737,
+                    0.12320274859666824,
+                    1
+                ],
+                "metallicFactor" : 0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Knot.003",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 254,
+            "max" : [
+                -1.6331628561019897,
+                1.4927202463150024,
+                1.8364516496658325
+            ],
+            "min" : [
+                -2.484571695327759,
+                0.6466780304908752,
+                0.9846463203430176
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 254,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 254,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 1296,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 3048,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3048,
+            "byteOffset" : 3048
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2032,
+            "byteOffset" : 6096
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2592,
+            "byteOffset" : 8128
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 10720,
+            "uri" : "knot_sculpture_knot003.bin"
+        }
+    ]
+}

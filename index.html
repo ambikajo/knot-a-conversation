@@ -3,46 +3,52 @@
 
 <head>
   <meta charset="utf-8">
-  <title>knot a conversation</title>
-  <meta name="description" content="knot a conversation">
+  <title>K(not) a Conversation</title>
+  <meta name="description" content="K(not) a Conversation">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
 
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-orbit-controls@1.3.0/dist/aframe-orbit-controls.min.js"></script>
-  <!-- <script src="https://unpkg.com/aframe-supercraft-loader@1.1.3/dist/aframe-supercraft-loader.js"></script> -->
+  <script src="wireframe.js"></script>
 </head>
 
 <body>
-  <div class="header">
-    <h1 id="headline">K(NOT) A CONVERSATION</h1>
-    <div id="exitButton">
-      <span id="qr-inst">Connect with the sculpture</span>
-    </div>
-    <div id="info">
-      <span id="about">
-        <!-- <h2>k(not) a conversation</h2> -->
-        <p>This project was created to the <b>befantastic colab fellowship.</b> </br></br>You can move around and have a closer look at the sculpture by zooming in and rotate the sculpture by dragging the model around with your mouse. This sculpture is embedded with questions and answers that reflect on the ideas of computer learning, vision and creativity. </br></br>To interact with it, please open your phone camera and scan the QR code on the right. You can use your phone's vision (camera) to reveal the some more truths.</br>
-        </br><i>Collaborators: Nayeli, Thomas and Ambika</i>
 
-        </p>
-      </span>
-    </div>
+  <div id="information">
+    <h1>K(NOT) A CONVERSATION</h1>
+    <h2>A Neural Knotwork Prototype</h2>
+    <p>This project was created during the <b>befantastic CoLab Fellowship.</b></p>
+    <p>The sculpture is embedded with questions and AI-generated answers that reflect on the concepts of artificial intelligence, creativity and labour.
+      Use your smartphone camera and scan the QR code on the right to connect and communicate with it.
+      To navigate in the scene use the left mouse button (Rotate), right mouse button (Pan) and mouse wheel (Zoom).
+    <p><i>A collaboration between Ambika Joshi, Nayeli Vega Vargas, and Thomas Heidtmann</i></p>
   </div>
+
+    <div id="interaction">
+      <p><span id="qr-inst">Connect with the sculpture.</span></p>
+    </div>
+
   <a-scene>
     <a-assets>
-      <!-- <a-asset-item id="knotModel" src="../uxr_neural/scene.gltf"></a-asset-item> -->
-      <a-asset-item id="knotModel" src="knot_sculpture.gltf"></a-asset-item>
+      <a-asset-item id="knotModelKnot001" src="../assets/knot_sculpture_knot001.gltf"></a-asset-item>
+      <a-asset-item id="knotModelKnot002" src="../assets/knot_sculpture_knot002.gltf"></a-asset-item>
+      <a-asset-item id="knotModelKnot003" src="../assets/knot_sculpture_knot003.gltf"></a-asset-item>
+      <a-asset-item id="knotModelKnot004" src="../assets/knot_sculpture_knot004.gltf"></a-asset-item>
+      <a-asset-item id="knotModelKnot005" src="../assets/knot_sculpture_knot005.gltf"></a-asset-item>
+      <a-asset-item id="knotModelStructure" src="../assets/knot_sculpture_structure.gltf"></a-asset-item>
     </a-assets>
-    <a-entity gltf-model="#knotModel" position="0 1.955 -4" scale="0.8 0.8 0.8"></a-entity>
-    <a-entity camera look-controls="enabled: false" orbit-controls="target: -1 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 3 2"></a-entity>
-
-
+    <a-entity gltf-model="#knotModelKnot001" position="0 0 0" scale="0.8 0.8 0.8"></a-entity>
+    <a-entity gltf-model="#knotModelKnot002" position="0 0 0" scale="0.8 0.8 0.8"></a-entity>
+    <a-entity gltf-model="#knotModelKnot003" position="0 0 0" scale="0.8 0.8 0.8"></a-entity>
+    <a-entity gltf-model="#knotModelKnot004" position="0 0 0" scale="0.8 0.8 0.8"></a-entity>
+    <a-entity gltf-model="#knotModelKnot005" position="0 0 0" scale="0.8 0.8 0.8"></a-entity>
+    <a-entity gltf-model="#knotModelStructure" position="0 0 0" scale="0.8 0.8 0.8" wireframe></a-entity>
+    <a-entity camera look-controls="enabled: false" orbit-controls="autoRotate: true; autoRotateSpeed: 0.01; target: 0 0 0; minDistance: 0.5; maxDistance: 180; initialPosition: 0 1.6 0"></a-entity>
   </a-scene>
 
-
-
 </body>
+
 <script>
   function on() {
     document.getElementById("about").style.display = "block";

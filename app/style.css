@@ -1,0 +1,49 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+video {
+  z-index :-1000;
+  margin-top: 20%;
+}
+
+.awrd{
+  font-family: 'Rajdhani', sans-serif;
+  color: #444444;
+  font-size: 30px;
+  text-align: center;
+  margin-left: auto;
+  /* margin-top: 95%; */
+  margin-bottom: auto;
+  margin-right: auto;
+  width: 80%;
+  /* height: 50% */
+}
+
+ #introduction {
+  font-family: 'Rajdhani', sans-serif;
+  /* text-align: center; */
+  color: #444444;
+  font-size: 25px;
+  margin-left: 20px;
+  width:80%
+}
+
+#introduction h2 {
+  font-size: 30px;
+  margin-top: 2%
+}
+
+.btnclass{
+  padding: 10px;
+  background-color: #34dede;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+  margin-left: 20px;
+  width: 50%;
+
+}
