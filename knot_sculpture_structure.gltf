@@ -1,0 +1,106 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.5.1",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Structure.001",
+            "rotation" : [
+                0.6084122657775879,
+                -0.004470306448638439,
+                0.26226577162742615,
+                0.7490201592445374
+            ]
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Mesh.003",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 3426,
+            "max" : [
+                5.346418857574463,
+                5.847477436065674,
+                4.606147289276123
+            ],
+            "min" : [
+                -5.757558345794678,
+                -6.994146823883057,
+                -4.485934734344482
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 3426,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 3426,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 20040,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 41112,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 41112,
+            "byteOffset" : 41112
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 27408,
+            "byteOffset" : 82224
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 40080,
+            "byteOffset" : 109632
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 149712,
+            "uri" : "knot_sculpture_structure.bin"
+        }
+    ]
+}
