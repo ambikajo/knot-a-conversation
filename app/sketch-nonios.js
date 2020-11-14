@@ -1,7 +1,7 @@
 // Classifier Variable
 let classifier;
 // Model URL
-let imageModelURL = 'https://teachablemachine.withgoogle.com/models/9apYE0438/';
+let imageModelURL = 'https://teachablemachine.withgoogle.com/models/Jb-0xkPsL/';
 
 //details for hte classifier
 let label = "";
@@ -12,10 +12,10 @@ let confArr = [];
 let awrd;
 //keywords for the different knots
 let k1;
-let k2 = "kinship"
-let k3 = "challenges"
+let k2;
+let k3;
 let k4;
-let k5 = "mirror"
+let k5;
 
 //basic requirements
 let button; //accept button
@@ -23,12 +23,14 @@ let answerbtn;
 let intro;
 let constraints;
 let machAns;
-let machAns2
+let machAns2;
+let diff;
+let bk;
 //video variable
-let vid
+let vid;
 
 //dictionary for the qna
-let dict
+let dict;
 
 function preload() {
   classifier = ml5.imageClassifier(imageModelURL + 'model.json');
@@ -50,22 +52,33 @@ function setup() {
     audio: false
   };
   textFont('Rajdhani')
-  // intro.select("#introduction")
   button = createButton("Accept")
-  // button.size(150, 150)
   button.addClass("btnclass")
   button.mousePressed(startStream)
+
   awrd = createDiv("")
   awrd.addClass("awrd")
-  machAns = createDiv("")
-  machAns.addClass("awrd")
-  k1 = dict.knotalist[0].question
-  k4 = dict.knotalist[3].question
-  answerbtn = createButton("Answer")
-  answerbtn.addClass("btnclass")
-  // answerbtn.mousePressed(giveanswer)
-  answerbtn.hide()
 
+  machAns = createDiv("")
+  machAns.addClass("rAns")
+  machAns.attribute("onclick", "off()")
+  // machAns.hide()
+
+  bk = createDiv("")
+  bk.addClass("back")
+  // bk.parent("bgANS")
+
+  k1 = dict.knotalist[0].question
+  rq = floor(random() * dict.knotalist[1].question.length)
+  k2 = dict.knotalist[1].question[rq]
+  k3 = dict.knotalist[2].question
+  k4 = dict.knotalist[3].question
+  k5 = dict.knotalist[4].question
+
+  answerbtn = createButton("Generate answer")
+
+  answerbtn.hide()
+  answerbtn.id("ansB")
 }
 //check orientation rather than platform
 function startStream() {
@@ -75,8 +88,8 @@ function startStream() {
   // if (window.screen.orientation.type !=
   //   "landscape-primary" || window.screen.orientation.type !=
   //   "landscape") {
-    if (navigator.platform == "iPhone" || navigator.platform == "Linux armv8l") {
-    vid = createCapture(VIDEO , constraints)
+  if (navigator.platform == "iPhone" || navigator.platform == "Linux armv8l") {
+    vid = createCapture(VIDEO, constraints)
   } else {
 
     vid = createCapture(VIDEO);
@@ -86,7 +99,7 @@ function startStream() {
   vid.position(0, 0)
   button.remove()
   select("#accept").remove()
-  answerbtn.show()
+  // answerbtn.show()
   // text("test",10,10)
   classifyVideo()
 
@@ -124,54 +137,59 @@ function draw() {
 }
 
 function addFrm() {
-  if (conf > 0.7) {
+  if (conf > 0.85) {
     if (label == "Knot 1") {
-      awrd.html(k1);
-      // a.position(width/2,height/2-100)
-
+      cArr(k1, 0)
     }
     if (label == "Knot 2") {
-      awrd.html(k2);
-      // a.position(width/2,height/2-100)
+      cArr(k2, 1)
     }
     if (label == "Knot 3") {
-      awrd.html(k3);
-      // a.position(width/2,height/2-100)
+      cArr(k3, 2)
     }
     if (label == "Knot 4") {
-      // clk.ellipse(100, 100, 10, 10)
-      awrd.html(k4);
-      // a.position(width/2,height/2-100)
+      cArr(k4, 3)
     }
     if (label == "Knot 5") {
-      awrd.html(k5);
-      // a.position(width/2,height/2-100)
+      cArr(k5, 4)
     }
-  }
-  // console.log(conf)
-  // console.log()
-  if (label == "Knot 4" && conf > 0.97) {
-    confArr.push(frameCount)
-    if (confArr.length > 240) {
-      diff = confArr[239] - confArr[0]
-      if (diff > 300) {
-
-        console.log(diff, confArr[0], confArr[49], "other")
-      } else {
-        answerbtn.mousePressed(giveanswer)
-        console.log(diff, confArr[0], confArr[49], k4)
-        // answerbtn.show()
-        machAns2 = dict.knotalist[3].answer[0]
-
-      }
-      confArr = []
+    if (label == "full") {
+      machAns.hide()
+      answerbtn.hide()
     }
+  } else {
+    machAns.hide()
+    answerbtn.hide()
   }
 }
 
 function giveanswer() {
-
-
+  machAns.show()
   machAns.html(machAns2)
-
+  confArr = []
 }
+
+function cArr(k, i) {
+  awrd.html(k);
+  confArr.push(frameCount)
+  // if (confArr.length > 96) {
+    // diff = confArr[95] - confArr[0]
+    // console.log(diff)
+
+    // if (diff < 96) {
+
+      answerbtn.show()
+      answerbtn.mousePressed(giveanswer)
+      // console.log(diff, confArr[0], confArr[49], k)
+      r = floor(random(dict.knotalist[i].answer.length))
+      machAns2 = dict.knotalist[i].answer[r]
+
+  //   }
+  // } else {
+  //   answerbtn.hide()
+
+
+  }
+  // else {
+  //   confArr = []
+  // }
